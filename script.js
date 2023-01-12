@@ -1,11 +1,10 @@
-function letterCombinations(input_digit) {
-  //Complete the function
-	if (!input_digit) {
+function letterCombinations(digits) {
+	if (!digits) {
         return [];
     }
     let result = [''];
-    for (let i = 0; i < input_digit.length; i++) {
-        let letters = maps[input_digit[i]];
+    for (let i = 0; i < digits.length; i++) {
+        let letters = map[digits[i]];
         let temp = [];
         for (let j = 0; j < letters.length; j++) {
             for (let k = 0; k < result.length; k++) {
@@ -14,7 +13,7 @@ function letterCombinations(input_digit) {
         }
         result = temp;
     }
-    return result;
+    return result.sort();
 }
 
 module.exports = letterCombinations;
