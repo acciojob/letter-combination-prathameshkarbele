@@ -1,11 +1,11 @@
-function letterCombinations(digits) {
+function letterCombinations(input_digit) {
   //Complete the function
-	if (!digits) {
+	if (!input_digit) {
         return [];
     }
     let result = [''];
-    for (let i = 0; i < digits.length; i++) {
-        let letters = map[digits[i]];
+    for (let i = 0; i < input_digit.length; i++) {
+        let letters = map[input_digit[i]];
         let temp = [];
         for (let j = 0; j < letters.length; j++) {
             for (let k = 0; k < result.length; k++) {
