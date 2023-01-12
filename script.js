@@ -5,7 +5,7 @@ function letterCombinations(input_digit) {
     }
     let result = [''];
     for (let i = 0; i < input_digit.length; i++) {
-        let letters = map[input_digit[i]];
+        let letters = maps[input_digit[i]];
         let temp = [];
         for (let j = 0; j < letters.length; j++) {
             for (let k = 0; k < result.length; k++) {
