@@ -1,19 +1,30 @@
+const mapping = {
+    '2': 'abc',
+    '3': 'def',
+    '4': 'ghi',
+    '5': 'jkl',
+    '6': 'mno',
+    '7': 'pqrs',
+    '8': 'tuv',
+    '9': 'wxyz'
+};
+
 function letterCombinations(digits) {
-	if (!digits) {
+    if (!digits) {
         return [];
     }
-    let result = [''];
-    for (let i = 0; i < digits.length; i++) {
-        let letters = map[digits[i]];
+    let result = [""];
+    for (let digit of digits) {
         let temp = [];
-        for (let j = 0; j < letters.length; j++) {
-            for (let k = 0; k < result.length; k++) {
-                temp.push(result[k] + letters[j]);
+        for (let letter of mapping[digit]) {
+            for (let combination of result) {
+                temp.push(combination + letter);
             }
         }
         result = temp;
     }
     return result.sort();
 }
+console.log(letterCombinations("23"))
 
 module.exports = letterCombinations;
